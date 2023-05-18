@@ -25,10 +25,12 @@ mod tests {
     
     #[test]
     fn test_problem2() {
-        assert_eq!(solve_problem2(), 4613732);  // replace this with your function and expected result
+        assert_eq!(solve_problem2(), 4_613_732);  
     }
 
     fn solve_problem2() -> u32 {
-        0
+        Fibonacci::new()
+        .take_while(|&x| x < 4_000_000)   
+        .sum()
     }
 }
