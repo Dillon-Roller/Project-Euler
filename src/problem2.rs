@@ -30,7 +30,8 @@ mod tests {
 
     fn solve_problem2() -> u32 {
         Fibonacci::new()
-        .take_while(|&x| x < 4_000_000)   
-        .sum()
+            .take_while(|&x| x < 4_000_000)
+            .filter(|&x| x % 2 == 0)
+            .sum()
     }
 }
