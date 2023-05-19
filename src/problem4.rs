@@ -9,20 +9,17 @@ mod tests {
     }
 
     fn solve_problem4() -> u64 {
-        (2..999*999)
-            .filter(|&x| is_palindrome(x))
-            .last()
+        (100*100..999*999)
+            .rev()
+            .find(|&n| is_palindrome(n))
             .unwrap()
     }
-
+    
     fn is_palindrome(n: u64) -> bool {
-        let s = n.to_string()
-            .chars()
-            .collect::<Vec<char>>();
-
-        s == s.iter()
+        let s = n.to_string();
+        
+        s == s.chars()
             .rev()
-            .cloned()
-            .collect::<Vec<char>>()
+            .collect::<String>()
     }
 }
