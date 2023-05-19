@@ -6,11 +6,11 @@ mod tests {
     }
 
     fn is_palindrome(n: u64) -> bool {
-        let n_str = n.to_string()
+        let s = n.to_string()
             .chars()
             .collect::<Vec<char>>();
 
-        n_str == n_str.iter()
+        s == s.iter()
             .rev()
             .cloned()
             .collect::<Vec<char>>()
