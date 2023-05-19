@@ -14,18 +14,16 @@ mod tests {
 
     fn largest_prime_factor(mut n: u64) -> u64 {
         let mut p = 2;
-        loop {
+        while p < n {
             p = smallest_prime_factor(p, n);
             if n != p {
                 n /= p;
             }
-            else {
-                return n;
-            }
         }
+        n
     }
 
-    fn smallest_prime_factor(start: u64, n: u64) -> u64{
+    fn smallest_prime_factor(start: u64, n: u64) -> u64 {
         (start..=n.sqrt() + 1)
             .find(|&x| n % x == 0)
             .unwrap_or(n)
