@@ -10,6 +10,12 @@ mod tests {
         assert_eq!(smallest_prime_factor(2, 4), 2);
 
         assert_eq!(largest_prime_factor(21), 7);
+
+        assert_eq!(solve_problem3(), 0)
+    }
+
+    fn solve_problem3() -> u64 {
+        largest_prime_factor(600_851_475_143)
     }
 
     fn largest_prime_factor(mut n: u64) -> u64 {
