@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
     #[test]
-    fn test_problem4() {
+    fn test_problem5() {
         assert_eq!(solve_problem5(), 232792560);
     }
 
