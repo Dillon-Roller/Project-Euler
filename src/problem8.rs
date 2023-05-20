@@ -3,23 +3,22 @@ mod tests {
     use std::fs;
 
     #[test]
-    fn test_problem7() {
-        assert_eq!(solve_problem7(), 104743)
+    fn test_problem8() {
+        assert_eq!(solve_problem8(), 23514624000)
     }
 
-    fn solve_problem7() -> u32 {
-        let num_str = fs::read_to_string("number.txt")
-            .expect("Something went wrong reading the file")
-            .replace("\n", ""); 
-
-        num_str
+    fn solve_problem8() -> u64 {
+        fs::read_to_string("input/problem8_input.txt")
+            .expect("input file should exist")
+            .replace("\n", "")
             .chars()
             .collect::<Vec<char>>() 
             .windows(13) 
             .map(|window| {
                 window.iter()
-                .filter_map(|c| c.to_digit(10)) 
-                .product::<u32>() 
+                    .filter_map(|c| c.to_digit(10)) 
+                    .map(|n| n as u64)
+                    .product::<u64>() 
             })
             .max() 
             .unwrap()
