@@ -11,7 +11,7 @@ mod tests {
 
         assert_eq!(largest_prime_factor(21), 7);
 
-        assert_eq!(solve_problem3(), 0)
+        assert_eq!(solve_problem3(), 6857)
     }
 
     fn solve_problem3() -> u64 {
