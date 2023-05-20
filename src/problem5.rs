@@ -2,10 +2,10 @@
 mod tests {
     #[test]
     fn test_problem4() {
-        assert_eq!(solve_problem4(), 232792560);
+        assert_eq!(solve_problem5(), 232792560);
     }
 
-    fn solve_problem4() -> u64 {
+    fn solve_problem5() -> u64 {
         (1..=20).fold(1, lcm)
     }
     
